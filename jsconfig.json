@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "_navigator/*": [
+                "src/navigator/*"
+            ],
+            "_modules/*": [
+                "src/modules/*"
+            ],
+            "_data/*": [
+                "src/data/*"
+            ],
+            "_store/*": [
+                "src/store/*"
+            ],
+            "_utils/*": [
+                "src/utils/*"
+            ],
+            "_assets/*": [
+                "assets/*"
+            ],
+        }
+    }
+}
