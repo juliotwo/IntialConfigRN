@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,8 +23,15 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { useUser } from '_store/hooks/useUser';
 
-const App: () => React$Node = () => {
+const App = () => {
+
+  const { actionsUser } = useUser()
+  useEffect(() => {
+    actionsUser.setUser()
+
+  }, [])
   return (
     <>
       <StatusBar barStyle="dark-content" />
