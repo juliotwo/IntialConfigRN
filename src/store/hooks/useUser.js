@@ -7,7 +7,7 @@ export const useUser = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
     const state = useSelector((state) => state);
-    console.log("State", state)
+    // console.log("State", state)
     const setUser = () => {
         dispatch(setUserData({
             user: "HOLI"

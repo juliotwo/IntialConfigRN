@@ -23,15 +23,9 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { useUser } from '_store/hooks/useUser';
 
 const App = () => {
 
-  const { actionsUser } = useUser()
-  useEffect(() => {
-    actionsUser.setUser()
-
-  }, [])
   return (
     <>
       <StatusBar barStyle="dark-content" />
