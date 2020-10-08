@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function SignIn() {
   return (
     <View style={styles.container}>
-      <Text>Sign in</Text>
+      <Text style={styles.text} >Sign in</Text>
     </View>
   );
 }
@@ -17,4 +17,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'red',
   },
+  text: {
+    fontFamily: "DINPro-Bold"
+  }
 });
