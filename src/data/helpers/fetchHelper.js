@@ -1,14 +1,14 @@
 // Utils
-import Store from '../utils/store';
-import NavigationService from '../../NavigationService';
-import {responses} from './responses';
-import {Platform} from 'react-native';
-import {getSystemVersion} from 'react-native-device-info';
+import AsyncStorage from '_utils/functions/asycStorage';
+// import NavigationService from '../../NavigationService';
+import { responses } from './responses';
+import { Platform } from 'react-native';
+import { getSystemVersion } from 'react-native-device-info';
 
 const fetchHelper = async (
   url,
   options = {},
-  {useToken = true, multipart = false} = {},
+  { useToken = true, multipart = false } = {},
 ) => {
   const version = getSystemVersion();
   const fetchOptions = {
@@ -23,7 +23,7 @@ const fetchHelper = async (
     ...options,
   };
 
-  let token = await Store.get('token');
+  let token = await AsyncStorage.get('token');
   if (token && useToken) {
     fetchOptions.headers.Authorization = `JWT-V3 ${token}`;
   }
@@ -35,9 +35,9 @@ const fetchHelper = async (
 
   return fetch(url, fetchOptions).then((response) => {
     if (response.status === 401 && useToken) {
-      NavigationService.navigate('RefreshWithNip', {
-        message: 'sesión expirada',
-      });
+      // NavigationService.navigate('RefreshWithNip', {
+      //   message: 'sesión expirada',
+      // });
     }
     if (response.status >= 400) {
       const error = {
@@ -54,7 +54,7 @@ const fetchHelper = async (
             if (res.code in responses) {
               error.message = responses[res.code];
             } else {
-              const {msg, msgs} = res;
+              const { msg, msgs } = res;
               error.message = msg || msgs || res;
               const non_field_errors =
                 res.non_field_errors || error.res.non_field_errors;
