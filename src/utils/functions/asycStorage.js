@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
-class Store {
+class UseAsyncStorage {
     // Persisting data:
     set = async (key, value) => {
         try {
@@ -35,4 +35,4 @@ class Store {
     };
 }
 
-export default new Store();
+export default new UseAsyncStorage();

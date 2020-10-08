@@ -1,7 +1,7 @@
 // this method is only for upload file o image
 
 // Utils
-import Store from "_utils/functions/store";
+import AsycStorage from "_utils/functions/asycStorage";
 import { includes } from "lodash";
 
 const fxhr = (url, option = { method: "GET" }) => {
@@ -12,7 +12,7 @@ const fxhr = (url, option = { method: "GET" }) => {
 
         const { method, data } = option;
         // get token of storage
-        let token = await Store.get("token");
+        let token = await AsycStorage.get("token");
 
         // open conecction
         xhr.open(method, url, true);

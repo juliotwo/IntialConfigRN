@@ -1,40 +1,5 @@
-import { cloneDeep, forEach, set, isString } from "lodash";
-import { Colors } from "./styles";
+import { Colors } from "../styles";
 
-export const createAction = (actionType) => (payload = null) =>
-    payload
-        ? {
-            type: actionType,
-            payload,
-        }
-        : {
-            type: actionType,
-        };
-
-export const setToState = (state, nextValue) => {
-    const nextState = cloneDeep(state);
-    forEach(nextValue, (value, key) => {
-        set(nextState, key, value);
-    });
-    return nextState;
-};
-
-
-export const validateFormat = (value) => {
-    if (
-        value === "0." ||
-        value === "0.0" ||
-        value === "0.00" ||
-        value === "0.000" ||
-        value === "0.0000" ||
-        value === "0.00000" ||
-        value === "0.000000" ||
-        value === "0.0000000" ||
-        value === "0.00000000"
-    ) {
-        return true;
-    }
-};
 export const typeMovement = (value) => {
     switch (value) {
         case "FEE":
@@ -102,12 +67,3 @@ export const iconColorMovement = (value) => {
             return "rgb(86,113,195)";
     }
 };
-
-export const fixedStr2 = (value) => {
-    if (isString(value)) {
-        return value.substring(0, value.indexOf('.') + 3)
-    }
-    else {
-        return value.toFixed(2)
-    }
-}
