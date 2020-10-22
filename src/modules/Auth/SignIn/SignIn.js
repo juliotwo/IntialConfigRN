@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Text} from 'julio-generic-components';
+const noeoe = 12;
 export default function SignIn() {
   console.log('holi');
   return (
