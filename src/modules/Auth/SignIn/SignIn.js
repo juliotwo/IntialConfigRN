@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
+import {View, StyleSheet} from 'react-native';
+import {Text} from 'julio-generic-components';
 export default function SignIn() {
+  console.log('holi');
   return (
     <View style={styles.container}>
-      <Text style={styles.text} >Sign in</Text>
+      <Text style={styles.text}>Sign in</Text>
     </View>
   );
 }
@@ -18,6 +19,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   text: {
-    fontFamily: "DINPro-Bold"
-  }
+    fontFamily: 'DINPro-Bold',
+  },
 });
